@@ -1,0 +1,58 @@
+{
+  "name": "cordova-plugin-ionic-webview",
+  "version": "1.1.14",
+  "description": "The official Ionic's WKWebView Engine Plugin",
+  "main": "index.js",
+  "scripts": {
+    "sync_plugin_xml": "sync-cordova-xml package.json plugin.xml --output=plugin.xml",
+    "version": "npm run sync_plugin_xml && git add plugin.xml",
+    "deploy": "np"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/cordova-plugin-ionic-webview.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/cordova-plugin-ionic-webview/issues"
+  },
+  "keywords": [
+    "cordova",
+    "wkwebview"
+  ],
+  "author": {
+    "name": "Ionic Team"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "np": "^2.16.0",
+    "sync-cordova-xml": "^0.4.0"
+  },
+  "gitHead": "4eccd43d802cee3952dc404d5b7f67765cbba953",
+  "homepage": "https://github.com/ionic-team/cordova-plugin-ionic-webview#readme",
+  "_id": "cordova-plugin-ionic-webview@1.1.14",
+  "_npmVersion": "5.4.2",
+  "_nodeVersion": "8.5.0",
+  "_npmUser": {
+    "name": "manucorporat",
+    "email": "manu.mtza@gmail.com"
+  },
+  "dist": {
+    "integrity": "sha512-NUiX05+W19x9fc0ZDQ1M8VMArPMTJuEDBDxaHa/XLjBK/YOCzKoHyU/hLUDXyWkrY+r2uKvQTZuD3GlsEHKFeQ==",
+    "shasum": "e082f2440cf67b72073cea1e89754c0f9a88f53d",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-ionic-webview/-/cordova-plugin-ionic-webview-1.1.14.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "manucorporat",
+      "email": "manu.mtza@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-ionic-webview-1.1.14.tgz_1507201599051_0.04996377951465547"
+  },
+  "directories": {},
+  "_shasum": "e082f2440cf67b72073cea1e89754c0f9a88f53d",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-ionic-webview/-/cordova-plugin-ionic-webview-1.1.14.tgz",
+  "_from": "cordova-plugin-ionic-webview@>=1.1.11 <2.0.0"
+}

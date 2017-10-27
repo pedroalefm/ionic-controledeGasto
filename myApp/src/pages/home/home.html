@@ -1,0 +1,33 @@
+<ion-header >
+  <ion-navbar color = "primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color:#342F4B;">
+
+    <form #f="ngForm" (submit)="form_login(f)" >
+        <img src="assets/img/mycoinIcon.png" style="display:block;width:50%;height:30%;margin-left:auto;margin-right:auto;">
+        
+    <ion-list>
+          <ion-item>
+            <ion-input type="email" value="" color="light" ngModel name="email" placeholder= "E-mail"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-input type="password" ngModel name="password" color="light"  placeholder= "Senha"></ion-input>
+          </ion-item>
+    </ion-list>
+  <button ion-button full>Entrar</button>  
+</form>
+<form #g="ngForm" (submit)="form_loginGoogle(g)" >
+    <button ion-button full color="danger">
+        <ion-icon name="logo-googleplus"></ion-icon>
+        </button>
+</form>
+<button ion-button full color="light" (click)= "cadastro()" >Cadastrar</button>
+
+
+</ion-content>

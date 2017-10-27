@@ -1,0 +1,27 @@
+
+<ion-header >
+
+  <ion-navbar color = "primary" >    
+    <ion-title>Gastos</ion-title>
+   
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding style="background-color:#342F4B;">
+  
+
+
+    <ion-list>
+        <button ion-item *ngFor="let m of moedas | async " color="light">
+            <ion-icon name="logo-bitcoin" item-start></ion-icon>
+          <ion-badge item-end></ion-badge>
+        </button>
+      </ion-list>
+
+      
+
+
+</ion-content>

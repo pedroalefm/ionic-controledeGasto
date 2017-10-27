@@ -1,0 +1,32 @@
+
+<ion-header>
+
+  <ion-navbar color = "primary">
+    <ion-title>Carteira</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:#342F4B;">
+<br><br><br>
+    <img src="assets/img/carteiraIcon.png" style="display:block;width:50%;height:30%;margin-left:auto;margin-right:auto;">
+    <br><br>
+
+    <ion-item>
+
+      <div class= "center"  >
+      
+          R$: <ion-badge  name="saldo" item>{{(usuario | async)?.saldo}}</ion-badge>          
+
+      </div>
+
+    </ion-item>
+
+
+    <ion-fab right bottom>
+        <button ion-fab color= "secondary" type="Submit" (click)="adcionarSaldo(usuario.saldo)"  > <ion-icon name="add"></ion-icon> </button>
+
+      </ion-fab>
+
+</ion-content>
