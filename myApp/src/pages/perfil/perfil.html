@@ -1,18 +1,47 @@
-<!--
-  Generated template for the PerfilPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+
 <ion-header>
 
-  <ion-navbar color = "primary">
+  <ion-navbar color = "navBar">
+    
     <ion-title>Perfil</ion-title>
+    
+    <ion-buttons end>
+        <button ion-button icon-only type="Submit" (click) = "opcao()" >
+          <ion-icon name="ios-more"></ion-icon>
+        </button>
+      </ion-buttons>
+      
+
   </ion-navbar>
+  <ion-item color= "navBar" no-lines><br>
+    <img src="{{(usuario | async)?.img}}" (click) = "escolhaFoto()" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;border-radius: 50%;border: 4px solid">
+    <ion-item color= "navBar" no-lines>
+      <div class= "center"><br>
+      <h1>{{(usuario | async)?.nome}}</h1>
+      {{(usuario | async)?.email}}
+      </div>
+  
+    </ion-item>
+  </ion-item>
+ 
 
 </ion-header>
 
 
-<ion-content padding style="background-color:#342F4B;">
+<ion-content padding  >
+  <br><br>
+  <ion-item>
+
+     <ion-icon name="ios-trending-down"><label>   Despesas: R$ {{(usuario | async)?.somatorio}}</label></ion-icon> 
+  </ion-item>
+  <ion-item>
+      <ion-icon name="ios-trending-up"><label>   Saldos: R$ {{(usuario | async)?.somatorioSaldo}}</label></ion-icon>
+  </ion-item>
+  <ion-item>
+     <ion-icon name="md-cash"><label>   Disponível: R$ {{(usuario | async)?.somatorioSaldo - (usuario | async)?.somatorio }}</label></ion-icon> 
+  </ion-item>  
+
+
 
 </ion-content>

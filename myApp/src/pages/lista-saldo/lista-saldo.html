@@ -1,0 +1,48 @@
+
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+<ion-header>
+
+  <ion-navbar color = "navBar">
+      <ion-searchbar placeholder= "Saldos" animated	= "true" (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-title></ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only type="Submit" (click)="adcionarSaldo()" >
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+
+    <ion-item>
+        <div id="container2" style="width:100%; height:300px;"></div>
+        
+    </ion-item>
+  
+
+    <ion-list >
+        <ion-item-sliding *ngFor="let s of saldosList "  >
+
+        <button  ion-item   (click)= "infoSaldo(s.categoria, s.valor, s.sobre, s.data)"  >
+          {{s.categoria}}: {{s.sobre}}
+          <ion-badge item-end color= "secondary">R$: {{s.valor}}</ion-badge>
+        </button>
+
+    <ion-item-options side="right">
+        <button ion-button color="danger"  (click)='deleteItem(s.sobre, s.valor, s.categoria)' >
+          Delete
+          </button>
+    </ion-item-options>
+  
+
+      </ion-item-sliding>
+    </ion-list>
+
+      <ion-badge item-end color= "secondary">Total: R${{(usuario | async)?.somatorioSaldo}}</ion-badge>
+
+
+</ion-content>

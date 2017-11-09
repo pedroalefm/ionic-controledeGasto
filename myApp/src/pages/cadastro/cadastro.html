@@ -6,14 +6,14 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="navBar">
     <ion-title>Cadastro</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding style="background-color:#342F4B;">
+<ion-content padding>
     <br><br><br><br><br><br><br><br>
     
     <form #f="ngForm" (submit)="form_cadastro(f)" >
@@ -38,7 +38,7 @@
             <ion-input type="password" require ngModel name="password2" placeholder="Repita a Senha"></ion-input>
         </ion-item>
         <br><br>
-        <button type="Submit" ion-button full>Cadastrar</button>  
+        <button type="Submit" ion-button round full>Cadastrar</button>  
         
 
 

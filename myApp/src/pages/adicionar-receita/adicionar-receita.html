@@ -6,38 +6,50 @@
 -->
 <ion-header>
 
-  <ion-navbar color = "primary"> 
+  <ion-navbar color = "navBar"> 
     <ion-title>Adicionar Receita</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding style="background-color:#342F4B;">
+<ion-content padding >
     
 
-  
+  <form [formGroup] = "saldoForm" (ngSubmit)="form_submit()">
+    
   <ion-list>
+    <ion-item >
+      <ion-input formControlName='valor' placeholder="Valor" type="text" [(ngModel)]="valor" name="valor"></ion-input>
+    </ion-item>   
 
-    
-      <ion-item>
-          <ion-input placeholder="Valor" type="text" [(ngModel)]="valor" name="valor" ></ion-input>
-      </ion-item>   
+    <ion-item text-wrap >
+        <ion-input placeholder="Sobre" formControlName='sobre' type="text" [(ngModel)]="sobre" name="sobre" ></ion-input>
+    </ion-item>
 
-        <ion-item>
+        <ion-item >
           <ion-label>Categoria</ion-label>
-          <ion-select [(ngModel)]="categoria">
-            <ion-option value="extra">Hora Extra</ion-option>
-            <ion-option value="salario">Salário</ion-option>
-            <ion-option value="pessoal">Rendimento Pessoal</ion-option>
-            <ion-option value="pensao">Pensão</ion-option>
-            <ion-option value="aluguel">Aluguel</ion-option>
-            <ion-option value="outro">Outros</ion-option>
+          <ion-select formControlName='categoria' [(ngModel)]="categoria">
+            <ion-option value="Hora extra">Hora Extra</ion-option>
+            <ion-option value="Salário">Salário</ion-option>
+            <ion-option value="Rendimentos pessoais">Rendimentos pessoais</ion-option>
+            <ion-option value="Pensão">Pensão</ion-option>
+            <ion-option value="Mesada">Mesada</ion-option>      
+            <ion-option value="Poupança">Poupança</ion-option>            
+            <ion-option value="Aluguel">Aluguel</ion-option>
+            <ion-option value="Outros">Outros</ion-option>
           </ion-select>
         </ion-item>
 
-        <button type="Submit" ion-button (click)="adicionarSaldo()" full>Adiconar</button>
-
+      <ion-item>
+          <ion-label>Data</ion-label>
+        <ion-datetime formControlName='data' displayFormat="DD/MM/YYYY"  name="data"></ion-datetime>
+      </ion-item>
+      <br><br>
+      <button type="Submit" ion-button round (click)="adicionarReceita()" full>Adiconar</button>
+      
   </ion-list>
+</form>
+
 
 </ion-content>

@@ -1,0 +1,36 @@
+<!--
+  Generated template for the InfoDespesaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "navBar">
+    <ion-title>Informações de Despesas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+  
+    <ion-list>
+        <ion-item>
+          Categoria: {{ infodespesa.categoria }}
+        </ion-item>
+        <ion-item text-wrap>
+            Sobre: {{ infodespesa.sobre }}
+          </ion-item>
+        <ion-item>
+            R$: {{ infodespesa.valor }}
+        </ion-item>
+        <ion-item text-wrap>
+            Data: {{ infodespesa.data }}
+          </ion-item>
+       
+
+       
+      </ion-list>
+
+</ion-content>

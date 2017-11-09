@@ -52,9 +52,11 @@ export class CadastroPage {
                 nome: f.controls.nome.value,
                 login: f.controls.login.value,
                 email: f.controls.email.value,
-                img: "",
-                saldo: "",
-                despesas: ""
+                img: "https://firebasestorage.googleapis.com/v0/b/bepidproject.appspot.com/o/userPadraoimg.jpg?alt=media&token=85a47205-c5d0-4676-9375-82e4492a56e3",
+                saldos: 0,
+                despesas: 0,
+                somatorio: 0,
+                somatorioSaldo: 0
               });
 
               this.presentToast('Usuário cadastrado com sucesso!');                       

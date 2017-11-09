@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component,  } from '@angular/core';
+import { NavController, LoadingController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FormsModule, NgForm } from '@angular/forms';
 import * as firebase from 'firebase/app';
@@ -17,9 +17,20 @@ import {TabPage} from '../tab/tab';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private afAuth: AngularFireAuth, private googlePlus: GooglePlus, public menuCtrl: MenuController) {
+  constructor(public navCtrl: NavController, private afAuth: AngularFireAuth, private googlePlus: GooglePlus, public menuCtrl: MenuController, public loadingCtrl: LoadingController) {
     this.menuCtrl.enable(false);
 
+  }
+  presentLoadingDefault() {
+    let loading = this.loadingCtrl.create({
+      content: 'Logando...'
+    });
+  
+    loading.present();
+  
+    setTimeout(() => {
+      loading.dismiss();
+    }, 1000);
   }
 
   form_login(f: NgForm) {
@@ -27,6 +38,7 @@ export class HomePage {
       return;
     }
     this.afAuth.auth.signInWithEmailAndPassword(f.controls.email.value, f.controls.password.value).then(ok => {
+          
       this.navCtrl.push(TabPage);
     });
   }

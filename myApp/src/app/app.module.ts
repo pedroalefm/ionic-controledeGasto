@@ -6,7 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { FormsModule, NgForm } from '@angular/forms';
 import {CadastroPage} from '../pages/cadastro/cadastro';
 import { GooglePlus } from '@ionic-native/google-plus';
-
+import {FormBuilder, Validators, FormGroup} from "@angular/forms";
+import {Camera} from "@ionic-native/camera"
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -18,11 +19,23 @@ import {AngularFireModule} from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {AdicionarReceitaPage} from '../pages/adicionar-receita/adicionar-receita';
 import { UserService } from '../providers/usuario/user-service';
+import {AdicionarDespesaPage} from '../pages/adicionar-despesa/adicionar-despesa';
+import {InfoDespesaPage} from '../pages/info-despesa/info-despesa';
+import {ListaSaldoPage} from '../pages/lista-saldo/lista-saldo';
+import {InfoSaldoPage} from '../pages/info-saldo/info-saldo';
+import {OpcoespagePage} from "../pages/opcoespage/opcoespage";
+
+import {AlterarEmailPage} from "../pages/alterar-email/alterar-email"
+import {AlterarFotoPage} from "../pages/alterar-foto/alterar-foto"
+import {AlterarSenhaPage} from "../pages/alterar-senha/alterar-senha"
+import {SobrePage} from "../pages/sobre/sobre";
+import { ChartModule } from 'angular2-highcharts';
+import * as Highcharts from 'highcharts';
 
 
 
 
-var config = {
+ export var config = {
   apiKey: "AIzaSyArEb7_OWPrCrw2fTbkhyQMGquXYUjjUD0",
   authDomain: "bepidproject.firebaseapp.com",
   databaseURL: "https://bepidproject.firebaseio.com",
@@ -38,12 +51,22 @@ var config = {
     HomePage,
     CadastroPage,
     TabPage,
-    AdicionarReceitaPage
+    AdicionarReceitaPage,
+    AdicionarDespesaPage,
+    InfoDespesaPage,
+    ListaSaldoPage,
+    InfoSaldoPage,
+    OpcoespagePage,
+    AlterarEmailPage,
+    AlterarFotoPage,
+    AlterarSenhaPage,
+    SobrePage
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(config),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ChartModule.forRoot('Highcharts')
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +74,16 @@ var config = {
     HomePage,
     CadastroPage,
     TabPage,
-    AdicionarReceitaPage
+    AdicionarReceitaPage,
+    AdicionarDespesaPage,
+    InfoDespesaPage,
+    ListaSaldoPage,
+    InfoSaldoPage,
+    OpcoespagePage,
+    AlterarEmailPage,
+    AlterarFotoPage,
+    AlterarSenhaPage,
+    SobrePage
   ],
   providers: [
     StatusBar,
@@ -61,6 +93,7 @@ var config = {
     GooglePlus,
     GooglePlus!,
     UserService,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

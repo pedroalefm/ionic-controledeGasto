@@ -1,32 +1,36 @@
 
 <ion-header>
+    <ion-navbar color="navBar">
+     
+      <ion-title>
+        Carteira
+      </ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only type="Submit" (click) = "exibirListaSaldo()" >
+            <ion-icon name="list"></ion-icon>
+          </button>
+        </ion-buttons>
 
-  <ion-navbar color = "primary">
-    <ion-title>Carteira</ion-title>
-  </ion-navbar>
-
-</ion-header>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding id="page1"></ion-content>
 
 
-<ion-content padding style="background-color:#342F4B;">
+<ion-content padding>
 <br><br><br>
-    <img src="assets/img/carteiraIcon.png" style="display:block;width:50%;height:30%;margin-left:auto;margin-right:auto;">
     <br><br>
 
-    <ion-item>
-
+    <ion-card>
+        <img src="assets/img/carteiraIcon.png" style="display:block;width:50%;height:30%;margin-left:auto;margin-right:auto;">
+      
+      <ion-card-content>
       <div class= "center"  >
       
-          R$: <ion-badge  name="saldo" item>{{(usuario | async)?.saldo}}</ion-badge>          
+          <h1>Dinheiro disponível</h1><br>
+           <ion-badge name="saldo" color="secondary" item><h1>R$: {{(usuario | async)?.somatorioSaldo - (usuario | async)?.somatorio }}</h1></ion-badge>          
 
       </div>
-
-    </ion-item>
-
-
-    <ion-fab right bottom>
-        <button ion-fab color= "secondary" type="Submit" (click)="adcionarSaldo(usuario.saldo)"  > <ion-icon name="add"></ion-icon> </button>
-
-      </ion-fab>
+    </ion-card-content>
+    </ion-card>
 
 </ion-content>
